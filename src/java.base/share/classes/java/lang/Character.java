@@ -67,21 +67,7 @@ import jdk.internal.HotSpotIntrinsicCandidate;
  * {@link #isJavaIdentifierStart(int)}, {@link #isJavaIdentifierStart(char)},
  * {@link #isJavaIdentifierPart(int)}, and {@link #isJavaIdentifierPart(char)}.
  * Code points in Java identifiers must be drawn from version 10.0 of
- * the Unicode Standard. The Java SE 11 Platform allows an implementation
- * of class {@code Character} to use the following code points:
- * <table class="striped">
- * <caption style="display:none">Allowed code points with extensions</caption>
- * <thead>
- * <tr><th scope="col">Unicode version</th>
- *     <th scope="col">Allowed code points</th></tr>
- * </thead>
- * <tbody>
- * <tr><th scope="row" style="text-align:left">Unicode 11.0</th>
- *     <td>{@code U+9FEB} to {@code U+9FEF} (GB18030-2022 Implementation Level 1)</td></tr>
- * <tr><th scope="row" style="text-align:left">Unicode 12.1</th>
- *     <td>{@code U+32FF} (Japanese Era)</td></tr>
- * </tbody>
- * </table>
+ * the Unicode Standard.
  *
  * <h3><a id="unicode">Unicode Character Representations</a></h3>
  *
