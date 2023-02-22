@@ -35,7 +35,7 @@ public class TestIsJavaIdentifierMethods {
     private static final int JAPANESE_ERA_CODEPOINT = 0x32FF;
     private static final int GB18030_2022_CODEPOINT_START = 0x9FEB;
     private static final int GB18030_2022_CODEPOINT_END = 0x9FEF;
-    
+
     public static void main(String[] args) {
         testIsJavaIdentifierPart_int();
         testIsJavaIdentifierPart_char();
