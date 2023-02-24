@@ -609,8 +609,8 @@ public class PolicyFile extends java.security.Policy {
                                 ("java.specification.version",
                                     SecurityConstants.PROPERTY_READ_ACTION));
                 pe.add(new PropertyPermission
-                        ("java.specification.maintenance.version",
-                                SecurityConstants.PROPERTY_READ_ACTION));
+                                ("java.specification.maintenance.version",
+                                    SecurityConstants.PROPERTY_READ_ACTION));
                 pe.add(new PropertyPermission
                                 ("java.specification.vendor",
                                     SecurityConstants.PROPERTY_READ_ACTION));
