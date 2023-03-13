@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2002, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2002, 2023, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -51,10 +51,23 @@ import jdk.internal.HotSpotIntrinsicCandidate;
  * and general category for every defined Unicode code point or
  * character range.
  * <p>
- * The file and its description are available from the Unicode Consortium at:
- * <ul>
- * <li><a href="http://www.unicode.org">http://www.unicode.org</a>
- * </ul>
+ * The Java SE 11 Platform uses character information from version 10.0
+ * of the Unicode Standard, with two extensions. First, the Java SE 11 Platform
+ * allows an implementation of class {@code Character} to use the code points
+ * in the range of {@code U+9FEB} to {@code U+9FEF} from the Unicode Standard
+ * version 11.0, in order for the class to allow the "Implementation Level 1"
+ * of the Chinese GB18030-2022 standard. Second, the Java SE 11 Platform
+ * allows an implementation of class {@code Character} to use the Japanese Era
+ * code point, {@code U+32FF}, from the Unicode Standard version 12.1.
+ * Consequently, the behavior of
+ * fields and methods of class {@code Character} may vary across
+ * implementations of the Java SE 11 Platform when processing the
+ * aforementioned code point ( outside of version 10.0 ), except for
+ * the following methods that define Java identifiers:
+ * {@link #isJavaIdentifierStart(int)}, {@link #isJavaIdentifierStart(char)},
+ * {@link #isJavaIdentifierPart(int)}, and {@link #isJavaIdentifierPart(char)}.
+ * Code points in Java identifiers must be drawn from version 10.0 of
+ * the Unicode Standard.
  *
  * <h3><a id="unicode">Unicode Character Representations</a></h3>
  *
@@ -5385,14 +5398,14 @@ class Character implements java.io.Serializable, Comparable<Character> {
             0x3260,   // 3260..327E; HANGUL
             0x327F,   // 327F..32CF; COMMON
             0x32D0,   // 32D0..32FE; KATAKANA
-            0x32FF,   // 32FF      ; UNKNOWN
+            0x32FF,   // 32FF      ; COMMON
             0x3300,   // 3300..3357; KATAKANA
             0x3358,   // 3358..33FF; COMMON
             0x3400,   // 3400..4DB5; HAN
             0x4DB6,   // 4DB6..4DBF; UNKNOWN
             0x4DC0,   // 4DC0..4DFF; COMMON
-            0x4E00,   // 4E00..9FEA; HAN
-            0x9FEB,   // 9FEB..9FFF; UNKNOWN
+            0x4E00,   // 4E00..9FEF; HAN
+            0x9FF0,   // 9FF0..9FFF; UNKNOWN
             0xA000,   // A000..A48C; YI
             0xA48D,   // A48D..A48F; UNKNOWN
             0xA490,   // A490..A4C6; YI
@@ -6902,14 +6915,14 @@ class Character implements java.io.Serializable, Comparable<Character> {
             HANGUL,                   // 3260..327E
             COMMON,                   // 327F..32CF
             KATAKANA,                 // 32D0..32FE
-            UNKNOWN,                  // 32FF
+            COMMON,                   // 32FF
             KATAKANA,                 // 3300..3357
             COMMON,                   // 3358..33FF
             HAN,                      // 3400..4DB5
             UNKNOWN,                  // 4DB6..4DBF
             COMMON,                   // 4DC0..4DFF
-            HAN,                      // 4E00..9FEA
-            UNKNOWN,                  // 9FEB..9FFF
+            HAN,                      // 4E00..9FEF
+            UNKNOWN,                  // 9FF0..9FFF
             YI,                       // A000..A48C
             UNKNOWN,                  // A48D..A48F
             YI,                       // A490..A4C6
