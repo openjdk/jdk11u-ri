@@ -450,6 +450,7 @@ public class Robot {
      * @return  Color of the pixel
      */
     public synchronized Color getPixelColor(int x, int y) {
+        checkScreenCaptureAllowed();
         AffineTransform tx = GraphicsEnvironment.
                 getLocalGraphicsEnvironment().getDefaultScreenDevice().
                 getDefaultConfiguration().getDefaultTransform();
